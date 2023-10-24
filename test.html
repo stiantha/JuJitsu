@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<title>Test Suite</title>
+<link rel="stylesheet" href="https://code.jquery.com/qunit/qunit-2.20.0.css">
+
+<body>
+    <div id="qunit"></div>
+    <div id="qunit-fixture"></div>
+    <script src="https://code.jquery.com/qunit/qunit-2.20.0.js"></script>
+    <script src="js/pensumController.js"></script>
+    <script src="js/model.js"></script>
+    <script src="js/pensumView.js"></script>
+</body>
+<script>
+    QUnit.test("selectSubtype updates the model and triggers pensumView", function (assert) {
+  // Arrange
+  const id = "some-subtype-id";
+  const expectedSelectedSubtype = id;
+
+  // Stub the pensumView function to track if it's called
+  let pensumViewCalled = false;
+  window.pensumView = function () {
+    pensumViewCalled = true;
+  };
+
+  // Act
+  selectSubtype(id);
+
+  // Assert
+  assert.strictEqual(model.selectedSubtype, expectedSelectedSubtype, "selectedSubtype is updated");
+  assert.ok(pensumViewCalled, "pensumView is called");
+});
+
+</script>

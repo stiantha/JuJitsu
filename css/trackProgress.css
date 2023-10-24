@@ -1,0 +1,93 @@
+#progress{
+  display: flex;
+  flex-direction: row;
+}
+
+#checklist {
+    margin: 20px;
+    text-align: left;
+  }
+  
+  
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  li {
+    margin: 10px 0;
+  }
+  
+  .circular-chart {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-self: center;
+    margin: 20px;
+    max-width: 20rem;
+  }
+  
+  .circleBelt {
+
+    stroke-width: 3.8;
+    fill: none;
+  }
+  
+  .circleCategory {
+    stroke-width: 3.8;
+    fill: none;
+  }
+  
+  .percentage-text-category,
+  .percentage-text-belt,
+  .percentage-text {
+    font-size: 10px;
+    text-anchor: middle;
+  }
+  
+  #progressPercentage {
+    font-size: 0.4rem;
+  }
+
+.pensumList {
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    width: 100%;
+    margin: 0 auto;
+    gap: 20px;
+    
+  }
+
+.beltCol{
+  grid-column: 1;
+}
+
+.categoryCol{
+  grid-column: 2;
+}
+  
+
+
+  .trackProgress {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: left;
+    padding: 20px;
+    border-radius: 5px;
+    flex: 1;
+  }
+  
+  .subtype {
+    pointer-events: none;
+  }
+
+  @keyframes progress {
+    from {
+        stroke-dasharray: 0, 100;
+    }
+  }
+  
+
+
+  
