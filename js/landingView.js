@@ -14,7 +14,7 @@ function landingView() {
       </div>
       <div class="col-md-6">
         <div class="img-box">
-          <img src="/JuJitsu Marie/images/landingbg.png" alt="">
+          <img src="./images/landingbg.png" alt="">
     </div>
   </div>
   </div>

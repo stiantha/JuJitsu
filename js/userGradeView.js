@@ -7,7 +7,7 @@ function userGradeView() {
         <!-- Sidenav -->
         <div class="sidenav">
             <div class="profile">
-                <img src="/JuJitsu Marie/images/profile2.png" alt="" width="100" height="100">
+                <img src="./images/profile2.png" alt="" width="100" height="100">
                 <div class="name">
                     Marie
                 </div>
