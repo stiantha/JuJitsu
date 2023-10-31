@@ -31,9 +31,7 @@ function userSettingsView(){
 <div class="main_settings">
  <div class="card_settings">
      <div class="card-body">
-         <i class="fa fa-pen fa-xs edit"></i>
          <table>
-             <tbody>
                  <tr>
                      <td>Navn</td>
                      <td>:</td>
@@ -63,8 +61,7 @@ function userSettingsView(){
                      <td>..</td>
                      <td>:</td>
                      <td>..</td>
-                 </tr>
-             </tbody>
+                 </tr>  
          </table>
      </div>
  </div>

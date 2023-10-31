@@ -1,38 +1,43 @@
 const model = {
-    //? INPUTS
-    app: {
-      currentPage: 1,
-      currentBelt: '',
-      exercisePreference: '',
-    },
-    user: {
-      id: null,
-      loggedIn: false,
-    },
-    
-    
+  //? INPUTS
+  app: {
+    currentPage: 1,
+    currentBelt: '',
+    exercisePreference: '',
+  },
+  user: {
+    id: null,
+    loggedIn: false,
+  },
 
-    registrationPage: {
-      pageId: 2,
-      date: '',
-      name: '',
-      email: '',
-      password: '',
-    },
-    loginPage: {
-      pageId: 3,
-      email: '',
-      password: '',
-    },
 
-    
-         
-    userPage: {
-      pageId: 4,
-      currentBelt: "Gult belte",
-      exercisesFinished: [],
-      trainingPreference: [],
-    },
+
+  registrationPage: {
+    pageId: 2,
+    date: '',
+    name: '',
+    email: '',
+    password: '',
+  },
+  loginPage: {
+    pageId: 3,
+    email: '',
+    password: '',
+  },
+
+
+
+  userPage: {
+    pageId: 4,
+    currentBelt: "Gult belte",
+    exercisesFinished: [],
+    trainingPreference: [],
+  },
+
+  sort: {
+    field: null,
+    direction: null,
+  },
 
   //* DATA
   belts: [
@@ -43,47 +48,47 @@ const model = {
     { id: 5, name: 'Svart belte' },
   ],
   categories: [
-    { id: 1, name: 'Del A - Grunnteknikker' },
-    { id: 2, name: 'Del B - Teknikktrening' },
-    { id: 3, name: 'Del C - Selvforsvarstrening' },
+    { id: 1, name: 'Grunnteknikker' },
+    { id: 2, name: 'Teknikktrening' },
+    { id: 3, name: 'Selvforsvarstrening' },
     { id: 4, name: 'Skadeforebyggende øvelser' },
   ],
   selectedSubtype: 0,
   subtypes: [
-    { id: 1, categoryId: 1, beltId: 1, name: "Guardstillinger / Benstillinger", nameJapanese: "Kamae / Ashi-Tachi" },
-    { id: 2, categoryId: 1, beltId: 1, name: "Forflytninger", nameJapanese: "Tai-sabaki" },
-    { id: 3, categoryId: 1, beltId: 1, name: "Fallteknikk" , nameJapanese: "Ukemi-waza" },
-    { id: 4, categoryId: 1, beltId: 1, name: "Kast / Fellinger", nameJapanese: "Nage waza" },
-    { id: 5, categoryId: 1, beltId: 1, name: "Slag", nameJapanese: "Tsuki waza" },
-    { id: 6, categoryId: 1, beltId: 1, name: "Spark", nameJapanese: "Keri waza" },
-    { id: 7, categoryId: 1, beltId: 1, name: "Mønster", nameJapanese: "Kata" },
-    { id: 8, categoryId: 1, beltId: 1, name: "Blokkeringer" , nameJapanese: "Uke waza"  },
+    { id: 0, categoryId: 1, beltId: 1, name: "Guard / Benstillinger", nameJapanese: "Kamae / Ashi-Tachi",   },
+    { id: 1, categoryId: 1, beltId: 1, name: "Forflytninger", nameJapanese: "Tai-sabaki",    },
+    { id: 2, categoryId: 1, beltId: 1, name: "Fallteknikk", nameJapanese: "Ukemi-waza",    },
+    { id: 3, categoryId: 1, beltId: 1, name: "Kast / Fellinger", nameJapanese: "Nage waza",    },
+    { id: 4, categoryId: 1, beltId: 1, name: "Slag", nameJapanese: "Tsuki waza",    },
+    { id: 5, categoryId: 1, beltId: 1, name: "Spark", nameJapanese: "Keri waza",    },
+    { id: 6, categoryId: 1, beltId: 1, name: "Mønster", nameJapanese: "Kata",    },
+    { id: 7, categoryId: 1, beltId: 1, name: "Blokkeringer", nameJapanese: "Uke waza",    },
+    { id: 8, categoryId: 2, beltId: 1, name: 'Forfra',    },
+    { id: 9, categoryId: 2, beltId: 1, name: 'Siden',    },
+    { id: 10, categoryId: 2, beltId: 1, name: 'Bakfra',    },
+    { id: 11, categoryId: 2, beltId: 1, name: 'Bakketeknikker',    },
 
-    { id: 9, categoryId: 2, beltId: 1, name: 'Forfra' },
-    { id: 10, categoryId: 2, beltId: 1, name: 'Siden' },
-    { id: 11, categoryId: 2, beltId: 1, name: 'Bakfra' },
-    { id: 12, categoryId: 2, beltId: 1, name: 'Bakketeknikker' },
+    { id: 12, categoryId: 3, beltId: 1, name: "Forsvar under press",    },
 
-    { id: 13, categoryId: 3, beltId: 1, name: "Forsvar under press" }, 
-
-    { id: 14, categoryId: 4, name: "Nivå 1" }, 
-    { id: 15, categoryId: 4, name: "Nivå 2" }, 
-    { id: 16, categoryId: 4, name: "Nivå 3" }, 
+    { id: 13, categoryId: 4, name: "Nivå 1" },
+    { id: 14, categoryId: 4, name: "Nivå 2" },
+    { id: 15, categoryId: 4, name: "Nivå 3" },
   ],
   exercises: [
-// Katagori 1 har 8 subtyper med totalt 27 øvelser: id 1 til 27
-// medialink: "https://www.youtube.com/embed/+video ID",
-// 0 / 1 Guardstillinger / Benstillinger (Kamae / Ashi-Tachi)
+    // Katagori 1 har 8 subtyper med totalt 27 øvelser: id 1 til 27
+    // medialink: "https://www.youtube.com/embed/+video ID",
+    // 0 / 1 Guardstillinger / Benstillinger (Kamae / Ashi-Tachi)
     {
-    id: 0,
-    subtypesId: 0,
-    CategoryId: 1,
-    name: 'Forsvarsguard, åpne hender',
-    nameJapanese: 'Shuto',
-    withPartner: '',
-    description: 'medialenke er feil, men er med for å illustrere funksjonen med film',
-    //Denne peker til en øvelse som ikke finnnes i TJK gult pensum
-    medialink: "https://www.youtube.com/embed/ItWZnTdwemg",
+      id: 0,
+      subtypesId: 0,
+      CategoryId: 1,
+      name: 'Forsvarsguard, åpne hender',
+      nameJapanese: 'Shuto',
+      withPartner: '',
+      description: 
+      "<br>Posisjon: Lær å ta en god posisjon i guarden, med beina godt plantet i bakken og armene beskyttende for hodet og halsen. Lær å bruke beina til å kontrollere motstanderen.<br><br>Bevegelser: Lær å blokkere og avverge angrep fra motstanderen. Lær å bruke bevegelser for å komme deg ut av guarden.<br><br>Teknikker:<br><br>Armbar: En armbar er en teknikk der du bøyer motstanderens arm bak ryggen.<br><br>Ezekiel choke: En Ezekiel choke er en teknikk der du plasserer armen din rundt motstanderens hals og kveler ham.<br><br>Guillotine choke: En guillotine choke er en teknikk der du plasserer armen din rundt motstanderens hals og kveler ham.",
+      medialink: "https://www.youtube.com/embed/ItWZnTdwemg",
+      
     },
     {
       id: 1,
@@ -92,7 +97,10 @@ const model = {
       name: 'Angrepsguard, lukkede hender',
       nameJapanese: 'Seiken',
       withPartner: '',
-      description: ''
+      description: 'medialenke er kanskje feil, men er med for å illustrere funksjonen med film',
+      //Denne peker til en øvelse som ikke finnnes i TJK gult pensum
+      medialink: "https://www.youtube.com/embed/ItWZnTdwemg",
+       
     },
     {
       id: 2,
@@ -101,7 +109,8 @@ const model = {
       name: 'Grunnleggende stilling',
       nameJapanese: 'Zenkutsu-dachi',
       withPartner: '',
-      description: ''
+      description: '',
+       
     },
     // 1 / 1 Forflytninger (Tai-sabaki)
     {
@@ -111,7 +120,8 @@ const model = {
       name: 'Sideforflytning',
       nameJapanese: 'Yoko-ashi',
       withPartner: '',
-      description: ''
+      description: '',
+       
     },
     {
       id: 4,
@@ -120,7 +130,8 @@ const model = {
       name: 'Kroppsvending',
       nameJapanese: 'Sha-tenkan',
       withPartner: '',
-      description: ''
+      description: '',
+       
     },
     {
       id: 5,
@@ -129,7 +140,8 @@ const model = {
       name: '90 grader dreining',
       nameJapanese: 'Han-tenkan',
       withPartner: '',
-      description: ''
+      description: '',
+       
     },
     {
       id: 6,
@@ -138,7 +150,8 @@ const model = {
       name: '180 grader dreining',
       nameJapanese: 'Zen-tenkan',
       withPartner: '',
-      description: ''
+      description: '',
+       
     },
     // 2 / 1 Fallteknikk (Ukemi-waza)
     {
@@ -148,7 +161,9 @@ const model = {
       name: 'Sideveis fall',
       nameJapanese: 'Yoko ukemi',
       withPartner: false,
-      description: ''
+      description: '',
+      medialink: "https://youtube.com/embed/K64QVhaTY4g",
+       
     },
     {
       id: 8,
@@ -166,7 +181,8 @@ const model = {
       name: 'Bakover fall',
       nameJapanese: 'Ushiro ukemi',
       withPartner: false,
-      description: ''
+      description: 'https://youtube.com/embed/zo77Oka-Fdc',
+       
     },
     {
       id: 10,
@@ -177,6 +193,7 @@ const model = {
       withPartner: false,
       description: '',
       medialink: "https://www.youtube.com/embed/0glU6Qu06kU",
+       
     },
     {
       id: 11,
@@ -187,6 +204,7 @@ const model = {
       withPartner: false,
       description: '',
       medialink: "https://www.youtube.com/embed/yPmA8yhNSVY",
+       
     },
     // 3 / 1 Kast / Fellinger (Nage waza)
     {
@@ -196,7 +214,9 @@ const model = {
       name: 'Stor ytre benfelling',
       nameJapanese: 'O soto o toshi',
       withPartner: true,
-      description: ''
+      description: '',
+      medialink: "https://youtube.com/embed/D0EUy-iAFIY",
+       
     },
     {
       id: 13,
@@ -205,7 +225,9 @@ const model = {
       name: 'Stort hoftekast',
       nameJapanese: 'O goshi',
       withPartner: true,
-      description: ''
+      description: '',
+      medialink: "https://www.youtube.com/embed/yzqnvf9z6cw",
+       
     },
     // 4 / 1 Slag (Tsuki waza)
     {
@@ -215,7 +237,8 @@ const model = {
       name: 'Rett slag med fremste hånd',
       nameJapanese: 'Tobikomi zuki',
       withPartner: '',
-      description: ''
+      description: '',
+       
     },
     {
       id: 15,
@@ -224,7 +247,9 @@ const model = {
       name: 'Rett slag med bakerste hånd',
       nameJapanese: 'Gyaku zuki',
       withPartner: '',
-      description: ''
+      description: '',
+      medialink: "https://www.youtube.com/embed/CyRUjLXX0f0",
+       
     },
     {
       id: 16,
@@ -233,7 +258,8 @@ const model = {
       name: 'Slagkombinasjon med rette slag',
       nameJapanese: 'Tobikomi zuki / Gyaku zuki',
       withPartner: '',
-      description: ''
+      description: '',
+       
     },
     // 5 / 1 Spark (Keri waza)
     {
@@ -243,7 +269,9 @@ const model = {
       name: 'Grunnleggende rett spark med bakerste ben',
       nameJapanese: 'Gyaku mae geri',
       withPartner: '',
-      description: ''
+      description: '',
+      medialink: "https://www.youtube.com/embed/88ipOGgk2IY",
+       
     },
     {
       id: 18,
@@ -252,7 +280,8 @@ const model = {
       name: 'Grunnleggende rett spark med fremste ben',
       nameJapanese: 'Tsurikomi mae geri',
       withPartner: '',
-      description: ''
+      description: '',
+       
     },
     // 6 / 1 Mønster (Kata)
     {
@@ -262,62 +291,70 @@ const model = {
       name: 'Go kyu kata - Guard, fem retninger',
       nameJapanese: 'Zenkutsu-dachi / Shuto',
       withPartner: '',
-      description: ''
+      description: '',
+       
     },
     // 7 / 1 Blokkeringer (Uke waza)
     {
       id: 20,
-      subtypesId: 7, 
+      subtypesId: 7,
       CategoryId: 1,
       name: 'Lav blokk, innenfra og ut',
       nameJapanese: 'Gedan barai',
       withPartner: '',
-      description: ''
+      description: '',
+      medialink: "https://www.youtube.com/embed/W386vQbE46M"
     },
     {
       id: 21,
-      subtypesId: 7, 
+      subtypesId: 7,
       CategoryId: 1,
       name: 'Mellom blokk, innenfra og ut',
       nameJapanese: 'Uchi-uke',
       withPartner: '',
-      description: ''
+      description: '',
+       
     },
     {
       id: 22,
-      subtypesId: 7, 
+      subtypesId: 7,
       CategoryId: 1,
       name: 'Høy blokk, nedenfra og opp',
       nameJapanese: 'Age-uke',
       withPartner: '',
-      description: ''
+      description: '',
+       
     },
     {
       id: 23,
-      subtypesId: 7, 
+      subtypesId: 7,
       CategoryId: 1,
       name: 'Mellom blokk, utenfra og inn',
       nameJapanese: 'Soto-uke',
       withPartner: '',
-      description: ''
+      description: '',
+       
     },
     {
       id: 24,
-      subtypesId: 7, 
+      subtypesId: 7,
       CategoryId: 1,
       name: 'Lav blokk, unenfra og inn',
       nameJapanese: 'Sukui-uke',
       withPartner: '',
-      description: ''
+      description: '',
+      medialink: "https://www.youtube.com/embed/b9ZLHJ84Qww",
+       
     },
     {
       id: 25,
-      subtypesId: 7, 
+      subtypesId: 7,
       CategoryId: 1,
       name: 'Lav kryssblokk, ovenfra og ned',
       nameJapanese: 'Gedan juji-uke',
       withPartner: '',
-      description: ''
+      description: '',
+       
     },
     {
       id: 26,
@@ -326,12 +363,14 @@ const model = {
       name: 'Høy kryssblokk, nedenfra and opp',
       nameJapanese: 'Jodan juji-uke',
       withPartner: '',
-      description: ''
+      description: '',
+      medialink: "https://www.youtube.com/embed/lvKByezP7nE",
+       
     },
 
 
-// 
-// Kategori 2 har 4 subtyper med totalt 22 øvelser: id 28 til 49
+    // 
+    // Kategori 2 har 4 subtyper med totalt 22 øvelser: id 28 til 49
     // 4 subtyper 
     {
       id: 27,
@@ -341,7 +380,8 @@ const model = {
       numberTJK: '511a',
       withPartner: true,
       description: '511a Forsvar mot hårtak Høyre hånd holder motstanders høyre hånd. Venstre hånd på motstanders høyre albue. Gå først fram og så til siden. slik at motstander står bøyd framover. NB: Forsvarer står ikke med bøyd rygg!  Frigjøring her og gå deretter et steg fram og i fra.',
-      medialink: 'images/Exercises/511a.png'
+      medialink: 'images/Exercises/511a.png',
+       
     },
     {
       id: 28,
@@ -351,7 +391,8 @@ const model = {
       numberTJK: '511b',
       withPartner: true,
       description: '511b Forsvar mot klestak Venstre hånd på albue. Høyre hånd mot kroppen. Samtidig balansebrytning ut mot siden. Hoftene svinges bort fra Motstander (beskyttelse). Felling med Stor ytre benfelling.',
-      medialink: ''
+      medialink: 'images/Exercises/511b.png',
+       
     },
     {
       id: 29,
@@ -361,7 +402,8 @@ const model = {
       numberTJK: '511d',
       withPartner: true,
       description: '511d Forsvar mot handleddstak nedenfra Strekk ut armene og vri hendene utover mens du går ifra. Siden til. Husk å være avslappet i handledd.',
-      medialink: ''
+      medialink: 'images/Exercises/511d.png',
+       
     },
     {
       id: 30,
@@ -371,7 +413,8 @@ const model = {
       numberTJK: '511e',
       withPartner: true,
       description: '511e Forsvar mot håndleddstak ovenfra Høyre hånd over motstanders høyre håndledd, frigjør venstre hånd v.h.a. minste motstands vei • vektstangprinsippet. Venstre hånd holder igjen motstanders venstre hånd og frigjør høyre hånd v.h.a. minste motstands vei.',
-      medialink: ''
+      medialink: 'images/Exercises/511e.png',
+       
     },
     {
       id: 31,
@@ -381,7 +424,8 @@ const model = {
       numberTJK: '512a',
       withPartner: true,
       description: '512a Forsvar mot strupetak Begge hender mot motstanders håndledd og press i sammen mens høyre bein på tå frem (beskyttelse) for så å skyve egen kropp i fra.',
-      medialink: ''
+      medialink: 'images/Exercises/512a.png',
+       
     },
     {
       id: 32,
@@ -391,7 +435,8 @@ const model = {
       numberTJK: '512b',
       withPartner: true,
       description: '512b Forsvar mot strupetak mot vegg Høyre hånd går over motstanders venstre hånd og under Motstanders høyre hånd. Kroppsvending samtidig som en vipper med begge armer. Avstand.',
-      medialink: ''
+      medialink: 'images/Exercises/512b.png',
+       
     },
     {
       id: 33,
@@ -401,7 +446,8 @@ const model = {
       numberTJK: '513a',
       withPartner: true,
       description: '513a Hendene på hoftene, skyv i fra 45 grader til siden. Balansebrytning. Gå inn med stor ytre benfelling.',
-      medialink: ''
+      medialink: 'images/Exercises/513a.png',
+       
     },
     {
       id: 34,
@@ -411,7 +457,8 @@ const model = {
       numberTJK: '513A',
       withPartner: true,
       description: '513 A Hendene på hoftene, skyv ifra 90 grader bakover. Balansebrytning. Inn og fell med stort hoftekast.',
-      medialink: ''
+      medialink: 'images/Exercises/513bigA.png',
+       
     },
     {
       id: 35,
@@ -421,7 +468,8 @@ const model = {
       numberTJK: '514a',
       withPartner: true,
       description: '514 a Rett slag, kroppsvending',
-      medialink: ''
+      medialink: 'images/Exercises/514a.png',
+       
     },
     {
       id: 36,
@@ -431,7 +479,8 @@ const model = {
       numberTJK: '514A',
       withPartner: true,
       description: '514 A Rett slag, sideforflytning',
-      medialink: ''
+      medialink: 'images/Exercises/514bigA.png',
+       
     },
     {
       id: 37,
@@ -441,7 +490,8 @@ const model = {
       numberTJK: '515a',
       withPartner: true,
       description: '515 a Rett spark, kroppsvending. Kun forflytninger med god avstand. Knyttneve ved spark-blokk.',
-      medialink: ''
+      medialink: 'images/Exercises/515a.png',
+       
     },
     {
       id: 38,
@@ -451,7 +501,8 @@ const model = {
       numberTJK: '515A',
       withPartner: true,
       description: '515 A Rett spark, sideforflyttning. Kun forflytninger med god avstand. Knyttneve ved spark-blokk.',
-      medialink: ''
+      medialink: 'images/Exercises/515bigA.png',
+       
     },
     {
       id: 39,
@@ -461,7 +512,8 @@ const model = {
       numberTJK: '522a',
       withPartner: true,
       description: '522a Høyre hånd på skrått over bryst/skuldrer. Venstre hånd frigjør luftveiene. Glid i fra.',
-      medialink: ''
+      medialink: 'images/Exercises/522a.png',
+       
     },
     {
       id: 40,
@@ -471,7 +523,8 @@ const model = {
       numberTJK: '531a',
       withPartner: true,
       description: '531a Begge hender på Motstanders hånd, samtidig gå frem med venstre fot, bøy ned og rundt skarpt og raskt bend i Motstanders håndledd. og gå ifra.',
-      medialink: ''
+      medialink: 'images/Exercises/531a.png',
+       
     },
     {
       id: 41,
@@ -481,7 +534,8 @@ const model = {
       numberTJK: '531e',
       withPartner: true,
       description: '531e Gå fram til siden. Frigjør høyre hånd og gå videre mens en frigjør venstre hånd.',
-      medialink: ''
+      medialink: 'images/Exercises/531e.png',
+       
     },
     {
       id: 42,
@@ -491,7 +545,8 @@ const model = {
       numberTJK: '532a',
       withPartner: true,
       description: '532a Høyre hånd høyt opp samtidig en slags kroppsvending fram (45°) til siden.',
-      medialink: ''
+      medialink: 'images/Exercises/532a.png',
+       
     },
     {
       id: 43,
@@ -501,7 +556,8 @@ const model = {
       numberTJK: '532c',
       withPartner: true,
       description: '532c Få luft med begge hender. Albuene inn til kroppen (ikke synke ned!) Ta med motstanders albue/skulder 180° ut til siden i tre halvsirkler, avstand.',
-      medialink: ''
+      medialink: 'images/Exercises/532c.png',
+       
     },
     {
       id: 44,
@@ -511,7 +567,8 @@ const model = {
       numberTJK: '533a',
       withPartner: true,
       description: '533a Synke ned og samtidig låse med begge hender. Så smyge bakover og samtidig holde Motstanders høyre arm. Avstand.',
-      medialink: ''
+      medialink: 'images/Exercises/533a.png',
+       
     },
     {
       id: 45,
@@ -521,7 +578,8 @@ const model = {
       numberTJK: '541f',
       withPartner: true,
       description: '541f Hoftestøt samtidig som armene frigjør seg ved en sirkelbevegelse. Begge hendene på hoftene for å ta imot, ansiktet til siden. 1) Skyv Motstander direkte til siden med begge under, eller 2) Skyv kneet ned med en hånd og dytt til siden med den andre hånden, samtidig med hoftestøt.',
-      medialink: ''
+      medialink: 'images/Exercises/541f.png',
+       
     },
     {
       id: 46,
@@ -531,7 +589,8 @@ const model = {
       numberTJK: '542e',
       withPartner: true,
       description: '542e Venstre hånd pa motstanders høyre hånd. Høyre hånd i motsatt armhule, samtidig skyver knærne til motstanderen oppover og ned til siden (45°), stå opp og avstand.',
-      medialink: ''
+      medialink: 'images/Exercises/542e.png',
+       
     },
     {
       id: 47,
@@ -541,7 +600,8 @@ const model = {
       numberTJK: '542f',
       withPartner: true,
       description: '542f Høyre hånd under Motstanders hender. Venstre hånd pa albue. Hoftestøt og skyv. Venstre hånd på hofte og høyre hånd på håndledd og et nytt hoftestøt mens en skyver og trekker',
-      medialink: ''
+      medialink: 'images/Exercises/542f.png',
+       
     },
     {
       id: 48,
@@ -551,17 +611,20 @@ const model = {
       numberTJK: '542g',
       withPartner: true,
       description: '542g  Venstre hånd på Motstanders høyre hånd. Høyre hand i motsatt armhule. samtidig hoftene til side og enten: 1) Sakse med beina eller 2) Venstre fot på Motstanders høyre kne og strekk ut mens høyre fot skyver over',
-      medialink: ''
+      medialink: 'images/Exercises/542g.png',
+       
     },
 
-// Kategori 3 har 1 subtyper med totalt 1 øvelse med id 50
-    { id: 49,
+    // Kategori 3 har 1 subtyper med totalt 1 øvelse med id 50
+    {
+      id: 49,
       subtypesId: 12,
-      name: "Sirkeltrening", 
-      WithPartner: true, 
-      description: ": Forsvar mot uavtalte kontaktgrep fra gult pensum." },
+      name: "Sirkeltrening",
+      WithPartner: true,
+      description: ": Forsvar mot uavtalte kontaktgrep fra gult pensum."
+    },
 
-    
+
     // Kategori 4 "Skadeforebyggende,( eller basisøvelser, generelle øvelser...) -> SubtypeID 4 indikerer "nivå 1"
     // Hentet fra to pdf på skadefri.no -> judo + Taekwondo. 
     // 
@@ -573,7 +636,7 @@ const model = {
       // ved inspisering av koden på skadefri.no fant jeg følgende: 
       //A)  https://vimeo.com/222059954 (denne går til Vimeo)
       // B) https://player.vimeo.com/video/222059954 (viser )
-     // <iframe src="https://player.vimeo.com/video/222059954" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe> //
+      // <iframe src="https://player.vimeo.com/video/222059954" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe> //
       withPartner: false,
       withRubberband: false,
       medialink: "https://player.vimeo.com/video/222059954",
@@ -586,6 +649,7 @@ const model = {
         'Tenk at du skal sette deg på en stol',
         'Hold ryggen rett',
       ],
+       
     },
     {
       id: 51,
@@ -602,6 +666,7 @@ const model = {
         'Ha kne over tå',
         'Hold en oppreist stilling gjennom hele øvelsen',
       ],
+       
     },
     {
       id: 52,
@@ -618,6 +683,7 @@ const model = {
         'Ha kne over tå',
         'Hold en oppreist stilling gjennom hele øvelsen',
       ],
+       
     },
     {
       id: 53,
@@ -633,6 +699,7 @@ const model = {
         'Gjør dype sidesteg til hver side',
         'Ha kne over tå',
       ],
+       
     },
     {
       id: 54,
@@ -650,6 +717,7 @@ const model = {
         'Albuene inntil kroppen',
         'Klem skulderbladene sammen',
       ],
+       
     },
     {
       id: 55,
@@ -667,6 +735,7 @@ const model = {
         'Hold overkroppen rett og skulderbuen lav',
         'Press skulderbladene sammen og ned i sluttstilling',
       ],
+       
     },
     {
       id: 56,
@@ -683,6 +752,7 @@ const model = {
         'Beveg armene rolig nedover og oppover',
         'Utfordre deg med ulike typer baller og vekter',
       ],
+       
     },
     {
       id: 57,
@@ -701,6 +771,7 @@ const model = {
         'Senk deg fremover, brems bevegelsen med baksiden av lårene',
         'Bruk armene for å skyve deg tilbake til utgangsstillingen',
       ],
+       
     },
     {
       // Tawkwondo nivå 1
@@ -719,6 +790,7 @@ const model = {
         'Roter hele overkroppen så langt du kommer',
         'Ha så strake knær som mulig',
       ],
+       
     },
     {
       id: 59,
@@ -736,6 +808,7 @@ const model = {
         'Stabiliser i magen og ryggen',
         'Strekk strikken og klem skulderbladene sammen',
       ],
+       
     },
     {
       id: 60,
@@ -753,6 +826,7 @@ const model = {
         'Hold overkroppen rett og skulderbuen lav',
         'Press skulderbladene sammen og ned i sluttstilling',
       ],
+       
     },
     {
       id: 61,
@@ -768,6 +842,7 @@ const model = {
         'Trekk strikken ved å skyve skulderen bakover og roter kroppen',
         'Start bevegelsen med albuen, hold den motsatte armen strak frem',
       ],
+       
     },
     {
       id: 62,
@@ -786,6 +861,7 @@ const model = {
         'Tenk at du skal sette deg på en stol',
         'Hold ryggen rett',
       ],
+       
     },
     {
       id: 63,
@@ -802,10 +878,11 @@ const model = {
         'Skyv knærne ut og brystet frem',
         'Hold ryggen rett mens du strekker ut knærne så godt som mulig',
       ],
+       
     },
     {
-    //Judo nivå 2
-    // Y 66 + Utad 65 + Nordic 70 finnes på nivå 1 
+      //Judo nivå 2
+      // Y 66 + Utad 65 + Nordic 70 finnes på nivå 1 
       id: 64,
       subtypeID: 15,
       categoryID: 4,
@@ -820,6 +897,7 @@ const model = {
         'Beveg armene rolig nedover og oppover',
         'Utfordre deg med ulike typer baller og vekter',
       ],
+       
     },
     {
       id: 65,
@@ -837,6 +915,7 @@ const model = {
         'Hold overkroppen rett og skulderbuen lav',
         'Press skulderbladene sammen og ned i sluttstilling',
       ],
+       
     },
     {
       id: 66,
@@ -854,6 +933,7 @@ const model = {
         'Albuene inntil kroppen',
         'Klem skulderbladene sammen',
       ],
+       
     },
     {
       id: 67,
@@ -870,6 +950,7 @@ const model = {
         'Landing i knebøyposisjon',
         'Hold kne over tå',
       ],
+       
     },
     {
       id: 68,
@@ -886,6 +967,7 @@ const model = {
         'Hold albuer strake',
         'Hev øvre del av overkroppen mot taket',
       ],
+       
     },
     {
       id: 69,
@@ -903,6 +985,7 @@ const model = {
         'Senk deg fremover, brems bevegelsen med baksiden av lårene',
         'Bruk armene for å skyve deg tilbake til utgangsstillingen',
       ],
+       
     },
     {
       id: 70,
@@ -920,6 +1003,7 @@ const model = {
         'Stabiliser i magen og ryggen',
         'Strekk strikken og klem skulderbladene sammen',
       ],
+       
     },
     {
       id: 71,
@@ -937,6 +1021,7 @@ const model = {
         'Hold overkroppen rett og skulderbuen lav',
         'Press skulderbladene sammen og ned i sluttstilling',
       ],
+       
     },
     {
       id: 72,
@@ -952,6 +1037,7 @@ const model = {
         'Trekk strikken ved å skyve skulderen bakover og roter kroppen',
         'Start bevegelsen med albuen, hold den motsatte armen strak frem',
       ],
+       
     },
     {
       id: 73,
@@ -970,6 +1056,7 @@ const model = {
         'Tenk at du skal sette deg på en stol',
         'Hold ryggen rett',
       ],
+       
     },
     {
       id: 74,
@@ -986,6 +1073,7 @@ const model = {
         'Skyv knærne ut og brystet frem',
         'Hold ryggen rett mens du strekker ut knærne så godt som mulig',
       ],
+       
     },
     {
       id: 75,
@@ -1002,6 +1090,7 @@ const model = {
         'Ha kne over tå på det fremre benet',
         'Gjøres evt. med dytt fra partner',
       ],
+       
     },
     {
       id: 76,
@@ -1020,6 +1109,7 @@ const model = {
         'Strekk armene frem i den samme linjen',
         'Bruk vekt eller en medisinball for å øke utfordringen',
       ],
+       
     },
     {
       // Judo nivå 3
@@ -1039,6 +1129,7 @@ const model = {
         'Ha kne over tå',
         'Tenk at du skal sette deg på en stol med rett rygg',
       ],
+       
     },
     {
       // kopi på nivå 1 og 2 og 3
@@ -1056,6 +1147,7 @@ const model = {
         'Hold armene strake',
         'Press skulderbladene sammen og ned i sluttstilling',
       ],
+       
     },
     {
       //kopi nivå 2
@@ -1073,6 +1165,7 @@ const model = {
         'Hold albuer strake',
         'Hev øvre del av overkroppen mot taket',
       ],
+       
     },
     {
       //kopi nivå 2
@@ -1090,6 +1183,7 @@ const model = {
         'Landing i knebøyposisjon',
         'Hold kne over tå',
       ],
+       
     },
     {
       id: 81,
@@ -1106,6 +1200,7 @@ const model = {
         'Land mykt på forfoten med kne over tå',
         'Vær nøyaktig og prøv å lande på et bestemt punkt',
       ],
+       
     },
     {
       // kopi nivå 1 og 2 og 3
@@ -1124,6 +1219,7 @@ const model = {
         'Senk deg fremover, brems bevegelsen med baksiden av lårene',
         'Bruk armene for å skyve deg tilbake til utgangsstillingen',
       ],
+       
     },
     {
       id: 83,
@@ -1141,6 +1237,7 @@ const model = {
         'Roter overkroppen',
         'Så mange du klarer med god kontroll',
       ],
+       
     },
     {
       id: 84,
@@ -1156,6 +1253,7 @@ const model = {
         'Stå i utfallsposisjon',
         'Plasser armen på innsiden av det fremste benet',
       ],
+       
     },
     {
       id: 85,
@@ -1172,6 +1270,7 @@ const model = {
         'Ha kne over tå',
         'Unngå at hoften sklir ut til siden',
       ],
+       
     },
     {
       id: 86,
@@ -1188,6 +1287,7 @@ const model = {
         'Land mykt på tærne',
         'Ha kne over tå',
       ],
+       
     },
     {
       id: 87,
@@ -1204,14 +1304,17 @@ const model = {
         'Hold kne over tå i landinger',
         'Bruk strikk som motstand',
       ],
+       
     },
   ],
   // Trolig fjerner vi hele model.media, og legger media (video > img) under hver exercise
   media: [
     // 12 øvelser under katagori 2, subtype 1 FORFRA med id fra 1 til 12, med ExerciseID 28 til 39
-    { id: 1, exerciseId: 28, 
-      caption: '511a', type:'img', 
-      src: "images/Exercises/511a.png"},
+    {
+      id: 1, exerciseId: 28,
+      caption: '511a', type: 'img',
+      src: "images/Exercises/511a.png"
+    },
 
     // + 11 øvelser til 
 
@@ -1221,13 +1324,13 @@ const model = {
       caption: '522a', type: 'img',
       src: "images/Exercises/522a.png"
     },
-     // 5 øvelser under katagori 2, subtype 3 BAKFRA med id fra 14 til 18 og ExerciseID fra 41 til 45
+    // 5 øvelser under katagori 2, subtype 3 BAKFRA med id fra 14 til 18 og ExerciseID fra 41 til 45
     {
       id: 14, exerciseId: 41,
       caption: '531a', type: 'img',
       src: "images/Exercises/531a.png"
     },
-     // 4 øvelser under katagori 2, subtype 4 BAKKETEKNIKKER med id fra 1 til 12
+    // 4 øvelser under katagori 2, subtype 4 BAKKETEKNIKKER med id fra 1 til 12
     {
       id: 19, exerciseId: 46,
       caption: '541f', type: 'img',

@@ -106,3 +106,12 @@
       max-width: 1140px;
     }
   }
+
+
+  @media (min-width: 2000px) {
+    img {
+        width: 50%;
+        height: auto;
+    }
+
+}

@@ -5,15 +5,16 @@ function navBar(){
     <nav>
         <ul class="nav__links">
             <li>
-                <a onclick="landingView()">Startside</a>
-                <a onclick="pensumView()">Øvelser</a>
-                <a onclick="trainingView()">Trening</a>
-                <a onclick="userGradeView()">Min Side</a>
+            <a onclick="landingView()">Startside</a>
+            <a onclick="pensumView()">Pensum</a>
+            <a onclick="ExerciseCollectionView()">Øvelsesamling</a>
+            <a onclick="trainingView()">Min trening</a>
+            <a onclick="userGradeView()">Min Side</a>
             </li>
         </ul>
     </nav>
     <a href="#logginn" class="regLogBtn">
-        <button onclick="authView()">Logg inn</button>
+        <button onclick="authView()">Bli Medlem</button>
     </a>
 </header>
 `;
