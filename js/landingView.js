@@ -5,7 +5,7 @@ function landingView() {
     <div class="row">
       <div class="col-md-6 ">
         <div class="detail-box">
-          <h1 id="pensumTitle">KYU Pensum Oversikt</h1>
+          <h1 id="pensumTitle">Ju Jitsu Pensum Oversikt</h1>
           <p id="pensumText">
            Lag en bruker og se hvor mye du allerede<br>mestrer eller har behov for å forbedre
           </p>
@@ -14,7 +14,7 @@ function landingView() {
       </div>
       <div class="col-md-6">
         <div class="img-box">
-          <img src="./images/landingbg.png" alt="">
+          <img src="\images\landingbg.png" alt="">
     </div>
   </div>
   </div>
