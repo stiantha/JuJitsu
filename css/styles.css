@@ -52,9 +52,9 @@ ul{
   text-transform: uppercase;
   padding: 10px 70px;
   background-color: transparent;
-  border: 1px solid #ff8a1d;
+  border: 1px solid var(--accent);
   border-radius: 5px;
-  color: #ff8a1d;
+  color: var(--accent);
 }
 
 .main_section .detail-box a:hover {
@@ -68,23 +68,32 @@ ul{
 
 .landing_section .detail-box {
   position: fixed;
-  width: 40rem;
-  top:5;
-  right:50%;
+  width: 31rem;
+  top:30%;
+  left:23%;
+  height: 100%;
+  
 
 
 }
+
+.landing_section .img-box img {
+  position: fixed;
+  bottom:-3rem;
+  right:0;
+  border-left: var(--body-color) 5px solid;
+  }
 
 
 .landing_section .detail-box a {
   display: inline-block;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   text-transform: uppercase;
-  padding: 15px 100px;
+  padding: 1rem 7.5rem;
   background-color: transparent;
-  border: 1px solid #ff8a1d;
+  border: 1px solid var(--accent);
   border-radius: 5px;
-  color: #ff8a1d;
+  color: var(--accent);
 }
 
 .landing_section .detail-box a:hover {
@@ -93,11 +102,17 @@ ul{
   color: #ffffff;
 }
 
-.landing_section .img-box img {
-position: fixed;
-bottom:-3rem;
-right:0;
+#landingTitle {
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  letter-spacing: 0.5rem;
+  font-weight: bolder;
+  padding: 1rem;
 }
+
+#landingTitle span {
+  color: var(--accent);
+}
+
 
 .exerciseImg {
   justify-content: center;

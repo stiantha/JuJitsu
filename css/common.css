@@ -1,4 +1,6 @@
 :root {
+    /* --accent: rgb(255, 140, 0); */
+    --accent: #ffc107;
     --body-color: rgb(40, 44, 51);
     --blue: #007bff;
     --indigo: #6610f2;
@@ -160,7 +162,7 @@
   }
   
   ::-webkit-scrollbar-thumb {
-    background: #e27a04;
+    background: var(--accent);
   }
   
   ::-webkit-scrollbar-thumb:hover {

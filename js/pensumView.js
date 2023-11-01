@@ -6,11 +6,10 @@ function pensumView() {
   <div class="row">
     <div class="col-md-6 ">
       <div class="detail-box">
-        <h1 id="pensumTitle">5 KYU GULT BELTE PENSUM</h1>
+        <h1 id="pensumTitle">5 KYU <span>GULT</span> BELTE <span>PENSUM</span></h1>
         <p id="pensumText">
-         Oversikt over hva du må mestre før du kan gå opp til prøve i gult belte.<br><br>  Kryss av hva du mestrer
+        Her kan du se nødvendige ferdigheter som må beherskes<br>før du kan kvalifisere deg for en<br><span>graderings prøve.</span><br><br>Marker ferdighetene som er mestret.<br>Se progresjon på <span onclick="userGradeView()" id="pensumMyPage">Min Side</span>
         </p>
-        <a onclick="userGradeView()" id="pensumMyPage">Min Side</a>
       </div>
     </div>
     <div class="col-md-6">
@@ -29,20 +28,20 @@ function pensumView() {
   <div class="box active">
     <div class="img-box">
     <img src="images/yellowBelt.png" alt="">
-    <h5 class="name">Gult Belte</h5>
+    <h5 class="name" style="color: var(--yellow)">5 KYU</h5>
     </div>
   </div>
 
   <div class="box">
     <div class="img-box">
       <img src="images/orangeBelt.png" alt="">
-      <h5 class="name">Orange Belte</h5>
+      <h5 class="name" style="color: var(--orange)"">4 KYU</h5>
     </div>
   </div>
 
   <div class="box">
     <div class="img-box"><img src="images/greenBelt.png" alt="">
-    <h5 class="name">Grønt Belte</h5>
+    <h5 class="name" style="color: var(--green)">3 KYU</h5>
   </div>
 </div>
 
@@ -62,6 +61,7 @@ function pensumView() {
 </div>
 
   <div class="pensumContent" id="exerciseContent">
+      ${tempPensumImg()}
       ${createExerciseHtml()}
       </div>
 </div>
@@ -121,4 +121,12 @@ function createExerciseHtml() {
     }
   }
   return html;
+}
+
+function tempPensumImg() {
+  if (model.selectedSubtype === null) {
+    return '<div class="card"><img src="images/pensumBanner.png" alt="404" style="min-width: 42.5rem; min-height: 33rem;"></div>';
+  } else {
+    return '';
+  }
 }

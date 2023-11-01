@@ -1,20 +1,21 @@
+hideTitle()
 function landingView() {
   document.getElementById("app").innerHTML = /*HTML*/ `
   <section class="landing_section ">
-  <img src="images\landingbg.png" alt="">
     <div class="row">
       <div class="col-md-6 ">
         <div class="detail-box">
-          <h1 id="pensumTitle">Ju Jitsu Pensum Oversikt</h1>
+          <h1 id="landingTitle"><span>Ju</span>Jit<span>su</span>%</h1>
           <p id="pensumText">
-           Lag en bruker og se hvor mye du allerede<br>mestrer eller har behov for å forbedre
+          Velkommen til nettstedet vårt for Ju Jitsu-fremdriftssporing.<br><br>
+          Her kan du se fremgangen din mot neste beltegradering prøve på en enkel og effektiv måte.
           </p>
-          <a onclick="authView()" id="pensumMyPage">Lag Bruker</a>
+          <a onclick="authView()" id="makeUser">Lag bruker</a>
         </div>
       </div>
       <div class="col-md-6">
         <div class="img-box">
-          <img src="\images\landingbg.png" alt="">
+          <img src="./images/landingbg.png" alt="">
     </div>
   </div>
   </div>

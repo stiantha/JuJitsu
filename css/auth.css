@@ -1,12 +1,12 @@
 .form {
-    padding: 40px;
-    max-width: 50rem;
-    margin: 40px auto;
-    border-radius: 4px;
-    box-shadow: 0 4px 10px 4px rgba(255, 255, 255, 0.3);
+    padding: 3rem;
+    max-width: 30%;
+    margin: auto;
+    border-radius: 10px;
+    border: solid 7px var(--body-color);
     justify-content: center;
     align-items: center;
-    margin-top: 10rem;
+    margin-top: 15%;
   }
   
   .tab-group {
@@ -22,7 +22,7 @@
   .tab-group li a {
     display: block;
     text-decoration: none;
-    padding: 15px;
+    padding: 1rem;
     background-color: inherit;
     color: #a0b3b0;
     font-size: 20px;
@@ -34,12 +34,12 @@
     border: #282828 3px solid; 
   }
   .tab-group li a:hover {
-    background: #dc830e;;
+    background: var(--accent);
     color: #ffffff;
   }
   .tab-group .active a {
     background-color: inherit;
-    border: #dc830e 3px solid; 
+    border: var(--accent) 3px solid; 
     color: #ffffff;
   }
   
@@ -55,11 +55,11 @@
     color: rgba(255, 255, 255, 0.5);
     transition: all 0.25s ease;
     pointer-events: none;
-    font-size: 22px;
+    font-size: 1.5rem;
   }
   label .req {
     margin: 2px;
-    color: #dc830e;;
+    color: var(--accent);
   }
   
   label.active {
@@ -89,7 +89,7 @@
   }
   input:focus, textarea:focus {
     outline: 0;
-    border-color: #dc830e;
+    border-color: var(--accent);
   }
   
   textarea {
@@ -119,21 +119,23 @@
     border: 0;
     outline: none;
     border-radius: 0;
-    padding: 15px 0;
-    margin: 0;
-    font-size: 2rem;
+    padding: 1rem 0;
+    margin: 3rem 0 0 0;
+    font-size: 1.5rem;
     font-weight: 200;
     text-transform: uppercase;
     letter-spacing: .1em;
     background: inherit;
-    border: #dc830e solid 3px;
+    border: var(--accent) solid 3px;
     border-radius: 3px;
     color: #ffffff;
     transition: all 0.5s ease;
 
   }
   .buttonForm:hover, .buttonForm:focus {
-    background: #dc830e;
+    background: var(--accent);
+    border: var(--accent) solid 3px;
+    box-shadow: none;
   }
   
   .buttonForm-block {

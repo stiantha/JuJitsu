@@ -17,13 +17,17 @@
 
 .profile img {
     border-radius: 50%;
-    box-shadow: 0px 0px 5px 1px rgb(255, 255, 255);
+    box-shadow: 0px 0px 5px 1px var(--white);
 }
 
 .name {
     font-size: 20px;
     font-weight: bold;
     padding-top: 20px;
+}
+
+.regLog {
+    color: var(--accent);
 }
 
 .job {
@@ -42,7 +46,7 @@
 }
 
 .url a {
-    color: #818181;
+    color: #ffffff;
     display: block;
     font-size: 20px;
     margin: 10px 0;
@@ -51,11 +55,10 @@
 }
 
 .url a:hover, .url .active {
-  color: black;
     margin-left: 25%;
     width: 50%;
-    background-color: #ffffff;
     border-radius: 20px;
+    color: var(--accent);
 }
 
 .main_grade {
@@ -88,14 +91,14 @@
 }
 
 .main_settings h2 {
-  color: #ffffff;
+  color: var(--white);
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   font-size: 24px;
   margin-bottom: 10px;
 }
 
 .main_settings a {
-  color: #ffffff;
+  color: var(--white);
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   font-size: 24px;
   margin-bottom: 10px;
@@ -117,7 +120,7 @@
   height: 270px;
   width: 80%;
   border: none;
-  color: white;
+  color: var(--white);
 }
 
 .main_settings .card_settings .card-body ul {
@@ -138,7 +141,7 @@
 
 .edit {
   position: absolute;
-  color: #e7e7e8;
+  color: var(--white);
   right: 14%;
 }
 
@@ -234,7 +237,7 @@
 .knot-center {
   width: 2rem;
   height: 2rem;
-  background: #ffffff;
+  background: var(--white);
   position: absolute;
   top: 50%;
   left: 50%;

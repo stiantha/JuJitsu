@@ -6,6 +6,8 @@
   transform: translateY(-50%);
 }
 
+
+
 .pensum_section .pensum_container {
   display: -webkit-box;
 
@@ -13,19 +15,14 @@
 
 .pensum_section .pensum_container .box {
   -webkit-box-flex: 1;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
   padding: 1rem 1rem;
-  background-color: inherit;
   color: #ffffff;
   width: 100%;
-  margin-right: auto;
-  margin-left: auto;
-  margin-top: 0;
-  margin-bottom: 0;
+  background-color: inherit;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
 .pensum_section .pensum_container {
@@ -33,21 +30,45 @@
 }
 
 .box {
-  border: 5px solid transparent;
+  border: 3px solid transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 .pensum_section .pensum_container .box .img-box {
   width: 9rem;
   background-color: inherit;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+
+.pensum_section img{
+  height: 9rem;
+  background-color: inherit;
 }
 
 .pensum_section img {
-  width: 100%;
+  width: 130%;
+  justify-content: center;
+  align-self: center;
 }
 
 .pensum_section .pensum_container .box:hover,
 .pensum_section .pensum_container .box.active {
-  filter: brightness(1.2);
   background-color: inherit;
+
+}
+
+.pensum_section .pensum_container .box:hover{
+  filter: brightness(1.2);
+}
+
+.pensum_section .pensum_container .box.active {
+  border: 3px solid var(--accent);
 }
 
 #pensumTitle {
@@ -56,26 +77,40 @@
     font-weight: bolder;
     padding: 1rem;
   }
+
+#pensumTitle span {
+    color: var(--yellow);
+  }
   
   #pensumText {
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     padding: 1rem;
     font-size: 2rem;
   }
-  
+
+  #pensumText span {
+    color: var(--yellow);
+    text-transform: uppercase;
+
+  }
+
+  #makeUser {
+    font-size: 2rem;
+    margin-left: 1rem;
+  }
+
   #pensumMyPage {
     font-size: 2rem;
-    margin-left: 2rem;
-    margin-top: 3rem;
+    border: none;
+    cursor: pointer;
   }
 
 .pensumSelect {
   position: sticky;
-  top: 15rem;
+  top: 21rem;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  margin-bottom: 3rem;
   margin-right: 1rem;
   padding: 2rem;
   border: 5px solid var(--body-color);
@@ -84,8 +119,9 @@
   border-radius: 0.5rem;
   font-size: 2.4rem;
   width: 25rem;
-  color: rgb(255, 140, 0);
+  color: var(--accent);
 }
+
 
 .pensumSelect a {
 

@@ -1,21 +1,34 @@
 function navBar(){
     document.getElementById('header').innerHTML += /*HTML*/`
     <header>
-    <img class="logo" src="images/logo.png" alt="logo">
+    <div class="logo" onclick="landingView()">
+    <img src="images/logo.png" alt="logo">
+    <p id="siteTitle"><span>Ju</span>Jit<span>su</span>%</p></div>
     <nav>
         <ul class="nav__links">
             <li>
             <a onclick="landingView()">Startside</a>
-            <a onclick="pensumView()">Pensum</a>
-            <a onclick="ExerciseCollectionView()">Øvelsesamling</a>
-            <a onclick="trainingView()">Min trening</a>
-            <a onclick="userGradeView()">Min Side</a>
+            <a onclick="pensumView(), navBar()">Pensum</a>
+            <a onclick="ExerciseCollectionView(), navBar()">Øvelsesamling</a>
+            <a onclick="trainingView(), navBar()">Min trening</a>
+            <a onclick="userGradeView(), navBar()">Min Side</a>
+            <a class="regLog"onclick="authView(), navBar()">Bli Medlem</a>
             </li>
         </ul>
     </nav>
-    <a href="#logginn" class="regLogBtn">
-        <button onclick="authView()">Bli Medlem</button>
-    </a>
 </header>
 `;
 }
+
+function footer(){
+    document.getElementById('footer').innerHTML += /*HTML*/`
+    <footer>
+    <div class="footer">
+        <div class="footer__text">
+            <p>© 2021 Ju Jitsu Pensum Oversikt</p>
+        </div>
+    </div>
+</footer>
+`;
+}
+// Add this line

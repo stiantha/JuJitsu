@@ -108,7 +108,7 @@
   }
 
 
-  @media (min-width: 2000px) {
+  @media (min-width: 1000px) {
     img {
         width: 50%;
         height: auto;

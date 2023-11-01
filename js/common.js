@@ -1,4 +1,14 @@
 function init() {
   navBar();
-  landingView();
+  trainingView();
+  hideTitle();
+
 }
+
+function hideTitle(){
+  let siteTitleElement = document.getElementById("siteTitle");
+  if (siteTitleElement) {
+      siteTitleElement.innerHTML = "";
+  } 
+  }
+

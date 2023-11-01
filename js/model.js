@@ -52,8 +52,9 @@ const model = {
     { id: 2, name: 'Teknikktrening' },
     { id: 3, name: 'Selvforsvarstrening' },
     { id: 4, name: 'Skadeforebyggende øvelser' },
+    { id: 5, name: 'Styrke øvelser' },
   ],
-  selectedSubtype: 0,
+  selectedSubtype: null,
   subtypes: [
     { id: 0, categoryId: 1, beltId: 1, name: "Guard / Benstillinger", nameJapanese: "Kamae / Ashi-Tachi",   },
     { id: 1, categoryId: 1, beltId: 1, name: "Forflytninger", nameJapanese: "Tai-sabaki",    },
@@ -70,9 +71,12 @@ const model = {
 
     { id: 12, categoryId: 3, beltId: 1, name: "Forsvar under press",    },
 
-    { id: 13, categoryId: 4, name: "Nivå 1" },
-    { id: 14, categoryId: 4, name: "Nivå 2" },
-    { id: 15, categoryId: 4, name: "Nivå 3" },
+    { id: 13, categoryId: 4, name: "Overkropp" },
+    { id: 14, categoryId: 4, name: "Bein" },
+    { id: 15, categoryId: 4, name: "Kjerne" },
+    { id: 16, categoryId: 5, name: "Overkropp" },
+    { id: 17, categoryId: 5, name: "Bein" },
+    { id: 18, categoryId: 5, name: "Kjerne" },
   ],
   exercises: [
     // Katagori 1 har 8 subtyper med totalt 27 øvelser: id 1 til 27
@@ -670,7 +674,7 @@ const model = {
     },
     {
       id: 52,
-      subtypeID: 14,
+      subtypesId: 14,
       categoryID: 4,
       name: 'Utfall bakover',
       withPartner: false,
@@ -756,7 +760,7 @@ const model = {
     },
     {
       id: 57,
-      subtypeID: 14,
+      subtypesId: 14,
       categoryID: 4,
       name: 'Nordic Hamstrings',
       withPartner: true,
@@ -884,7 +888,7 @@ const model = {
       //Judo nivå 2
       // Y 66 + Utad 65 + Nordic 70 finnes på nivå 1 
       id: 64,
-      subtypeID: 15,
+      subtypesId: 15,
       categoryID: 4,
       name: 'Utadrotasjon skulder',
       withPartner: true,
@@ -919,7 +923,7 @@ const model = {
     },
     {
       id: 66,
-      subtypeID: 15,
+      subtypesId: 15,
       categoryID: 4,
       name: 'Stående roing',
       withPartner: true,
@@ -1025,7 +1029,7 @@ const model = {
     },
     {
       id: 72,
-      subtypeID: 15,
+      subtypesId: 15,
       categoryID: 4,
       name: 'Pil og bue',
       withPartner: false,
@@ -1257,7 +1261,7 @@ const model = {
     },
     {
       id: 85,
-      subtypeID: 16,
+      subtypesId: 16,
       categoryID: 4,
       name: 'Ettbens knebøy',
       withPartner: false,
@@ -1274,7 +1278,7 @@ const model = {
     },
     {
       id: 86,
-      subtypeID: 16,
+      subtypesId: 16,
       categoryID: 4,
       name: 'Sidehopp',
       withPartner: false,

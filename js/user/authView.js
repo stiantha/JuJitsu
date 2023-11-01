@@ -53,7 +53,7 @@ function authView() {
               <input type="password" required autocomplete="off" />
             </div>
             <p class="forgot"><a href="mailto:marie@getacademy.no">Glemt passordet?</a></p>
-            <button class="buttonForm buttonForm-block">Log In</button>
+            <button class="buttonForm buttonForm-block">Logg Inn</button>
           </form>
         </div>
       </div>

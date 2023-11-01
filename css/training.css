@@ -1,0 +1,101 @@
+
+.training_section{
+  margin: 0;
+  padding: 0;
+  margin-top: 10%;
+
+}
+
+.trainingContent {
+    min-height: 100rem; /* Adjust this value as needed */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 45rem;
+    color: white;
+    cursor: pointer;
+    scroll-behavior: smooth;
+    height: 100%;
+    transition: height 0.2s ease-out;
+  }
+  
+  .trainingSelect {
+    position: sticky;
+    top: 21rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-right: 1rem;
+    padding: 2rem;
+    border: 5px solid var(--body-color);
+    height: 100%;
+    overflow: hidden;
+    border-radius: 0.5rem;
+    font-size: 2.4rem;
+    width: 25rem;
+    color: var(--accent);
+  }
+
+  .trainingContainer {
+    display: flex;
+    flex-direction: row;
+    height: 300%;
+    width: auto;
+    scroll-behavior: smooth;
+    margin-top: 10%;
+
+  }
+
+  .training_section .training_section{
+    transform: translateY(-50%);
+  }
+  
+  .training_section .training_container {
+    display: -webkit-box;  
+  }
+  
+  .training_section .training_container .box {
+    -webkit-box-flex: 1;
+    padding: 1rem 1rem;
+    color: #ffffff;
+    width: 100%;
+    background-color: inherit;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .training_section .training_container {
+    border: solid 5px var(--body-color);
+  }
+  
+  .training_section .training_container .box .img-box {
+    width: 9rem;
+    background-color: inherit;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  
+  .training_section img{
+    height: 9rem;
+    background-color: inherit;
+  }
+  
+  .training_section img {
+    width: 130%;
+    justify-content: center;
+    align-self: center;
+  }
+  
+  .training_section .training_container .box:hover,
+  .training_section .training_container .box.active {
+    background-color: inherit;
+  }
+  
+/* .training_section .training_container .box.active {
+  border: 2px solid var(--white);
+} */
