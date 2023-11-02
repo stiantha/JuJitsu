@@ -106,9 +106,9 @@ function createExerciseHtml() {
               <div class="card_media">
               ${medialinkHtml}
               </div>
-              <!--<div class="card_body">
+              <div class="card_body">
               <p align="justify">${exercise.description || ''} </p>
-              </div><!---->
+              </div>
               <div class="card_footer"><br><h3 onclick="setExerciseIsDone(${exercise.id})">${exercise.isDone ? '☑' : '☐'}</h3>
 
               </div>

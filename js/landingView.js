@@ -10,7 +10,7 @@ function landingView() {
           Velkommen til nettstedet vårt for Ju Jitsu-fremdriftssporing.<br><br>
           Her kan du se fremgangen din mot neste beltegradering prøve på en enkel og effektiv måte.
           </p>
-          <a onclick="authView()" id="makeUser">Lag bruker</a>
+          <a onclick="registerView()" id="makeUser">Lag bruker</a>
         </div>
       </div>
       <div class="col-md-6">

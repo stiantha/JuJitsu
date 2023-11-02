@@ -1,37 +1,25 @@
 const model = {
   //? INPUTS
-  app: {
-    currentPage: 1,
-    currentBelt: '',
-    exercisePreference: '',
-  },
   user: {
     id: null,
     loggedIn: false,
   },
 
-
-
-  registrationPage: {
-    pageId: 2,
-    date: '',
-    name: '',
-    email: '',
-    password: '',
-  },
-  loginPage: {
-    pageId: 3,
-    email: '',
-    password: '',
-  },
-
-
+  users:[
+    {
+      id: 1,
+      name: "marie",
+      email: "marie@getacademy.no",
+      password: "terje123",
+      beltGrade: 0,
+      admin: true
+    },
+  ],
 
   userPage: {
     pageId: 4,
-    currentBelt: "Gult belte",
+    currentBelt: '',
     exercisesFinished: [],
-    trainingPreference: [],
   },
 
   sort: {
@@ -41,11 +29,13 @@ const model = {
 
   //* DATA
   belts: [
+    { id: 0, name: 'Hvitt belte' },
     { id: 1, name: 'Gult belte' },
     { id: 2, name: 'Oransje belte' },
-    { id: 3, name: 'Blått belte' },
-    { id: 4, name: 'Brunt belte' },
-    { id: 5, name: 'Svart belte' },
+    { id: 3, name: 'Grønt belte' },
+    { id: 4, name: 'Blått belte' },
+    { id: 5, name: 'Brunt belte' },
+    { id: 6, name: 'Svart belte' },
   ],
   categories: [
     { id: 1, name: 'Grunnteknikker' },
@@ -53,8 +43,10 @@ const model = {
     { id: 3, name: 'Selvforsvarstrening' },
     { id: 4, name: 'Skadeforebyggende øvelser' },
     { id: 5, name: 'Styrke øvelser' },
+    { id: 6, name: 'Mitt Program' },
   ],
   selectedSubtype: null,
+  selectedTraining: null,
   subtypes: [
     { id: 0, categoryId: 1, beltId: 1, name: "Guard / Benstillinger", nameJapanese: "Kamae / Ashi-Tachi",   },
     { id: 1, categoryId: 1, beltId: 1, name: "Forflytninger", nameJapanese: "Tai-sabaki",    },
@@ -77,6 +69,7 @@ const model = {
     { id: 16, categoryId: 5, name: "Overkropp" },
     { id: 17, categoryId: 5, name: "Bein" },
     { id: 18, categoryId: 5, name: "Kjerne" },
+    { id: 19, categoryId: 6, name: "Øvelser" },
   ],
   exercises: [
     // Katagori 1 har 8 subtyper med totalt 27 øvelser: id 1 til 27

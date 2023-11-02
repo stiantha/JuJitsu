@@ -43,9 +43,6 @@
     color: #ffffff;
   }
   
-  .tab-content > div:last-child {
-    display: none;
-  }
   
   
   label {

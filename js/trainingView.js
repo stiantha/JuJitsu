@@ -40,6 +40,8 @@ function trainingView() {
                            ${createSubtypeHtml(4, subtypes)}<br/>
                            <h6>${trainingCategoryHtml[4].name}</h6><br/>
                            ${createSubtypeHtml(5, subtypes)}<br/>
+                           <h6>${trainingCategoryHtml[5].name}</h6><br/>
+                           ${createSubtypeHtml(6, subtypes)}<br/>
                            </div>
                            
                            <div class="trainingContent" id="exerciseContent">
