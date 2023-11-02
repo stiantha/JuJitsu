@@ -21,7 +21,7 @@
   
   .trainingSelect {
     position: sticky;
-    top: 21rem;
+    top: 28rem;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -71,7 +71,7 @@
   }
   
   .training_section .training_container .box .img-box {
-    width: 9rem;
+    height: 13rem;
     background-color: inherit;
     display: flex;
     justify-content: center;
@@ -81,7 +81,8 @@
   
   
   .training_section img{
-    height: 9rem;
+    height: 10rem;
+    width: 15rem;
     background-color: inherit;
   }
   

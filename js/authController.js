@@ -1,8 +1,7 @@
-function checkUserLoggedIn(viewLoad) {
+function checkUserLoggedIn(callback) {
   const loggedIn = model.user.loggedIn;
   if (loggedIn === true) {
-    viewLoad;
-    return;
+    callback();
   } else {
     loginView();
   }
@@ -33,4 +32,5 @@ function addUser(firstName, lastName, email, password) {
   model.user.id = newUser.id;
   model.user.loggedIn = true;
   landingView();
+  saveModelToLocalStorage();
 }

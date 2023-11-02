@@ -1,7 +1,8 @@
 function init() {
   navBar();
-  registerView();
+  landingView();
   hideTitle();
+  loadModelFromLocalStorage()
 
 }
 
@@ -41,17 +42,27 @@ function hideTitle(){
     <nav>
         <ul class="nav__links">
             <li>
-            <a onclick="landingView()">Startside</a>
-            <a onclick="checkUserLoggedIn(pensumView()), navBar()">Pensum</a>
-            <a onclick="ExerciseCollectionView(), navBar()">Øvelsesamling</a>
-            <a onclick="checkUserLoggedIn(trainingView()), navBar()">Min trening</a>
-            <a onclick="checkUserLoggedIn(userGradeView()), navBar()">Min Side</a>
-            <a class="regLog"onclick="registerView(), navBar()">Bli Medlem</a>
+            <a onclick="ExerciseCollectionView()">Øvelsesamling</a>
+            <a onclick="landingView(landingView)">Startside</a>
+            <a onclick="checkUserLoggedIn(pensumView)">Pensum</a>
+            <a onclick="checkUserLoggedIn(trainingView)">Trening</a>
+            <a onclick="checkUserLoggedIn(userGradeView)">Min Side</a>
             </li>
         </ul>
     </nav>
 </header>
 `;
+}
+
+function updateNavBar(currentView) {
+  const links = document.querySelectorAll('.nav__links a');
+  links.forEach(link => {
+    if (link.onclick.toString().includes(currentView)) {
+      link.classList.add('current');
+    } else {
+      link.classList.remove('current');
+    }
+  });
 }
 
 function footer(){
@@ -66,3 +77,13 @@ function footer(){
 `;
 }
 
+function saveModelToLocalStorage() {
+  localStorage.setItem('model', JSON.stringify(model));
+}
+
+function loadModelFromLocalStorage() {
+  const storedModel = localStorage.getItem('model');
+  if (storedModel) {
+    model = JSON.parse(storedModel);
+  }
+}

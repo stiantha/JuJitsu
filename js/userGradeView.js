@@ -1,4 +1,5 @@
 function userGradeView() {
+  updateNavBar('userGradeView');
   let trainingCategory = model.categories;
   const app = document.getElementById("app");
   if (app) {

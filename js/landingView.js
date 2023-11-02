@@ -1,5 +1,6 @@
 hideTitle()
 function landingView() {
+updateNavBar('landingView');
   document.getElementById("app").innerHTML = /*HTML*/ `
   <section class="landing_section ">
     <div class="row">
@@ -10,7 +11,8 @@ function landingView() {
           Velkommen til nettstedet vårt for Ju Jitsu-fremdriftssporing.<br><br>
           Her kan du se fremgangen din mot neste beltegradering prøve på en enkel og effektiv måte.
           </p>
-          <a onclick="registerView()" id="makeUser">Lag bruker</a>
+          <h1 id="landingUser" onclick="registerView()"><span>@</span>Bli<span>Medlem</span></h1>
+          
         </div>
       </div>
       <div class="col-md-6">

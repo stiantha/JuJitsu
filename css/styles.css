@@ -89,15 +89,12 @@ ul{
   display: inline-block;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   text-transform: uppercase;
-  padding: 1rem 7.5rem;
   background-color: transparent;
-  border: 1px solid var(--accent);
   border-radius: 5px;
   color: var(--accent);
 }
 
 .landing_section .detail-box a:hover {
-  border: solid white 1px;
   background-color: transparent;
   color: #ffffff;
 }
@@ -110,6 +107,19 @@ ul{
 }
 
 #landingTitle span {
+  color: var(--accent);
+}
+
+#landingUser {
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  letter-spacing: 0.5rem;
+  font-weight: bolder;
+  padding: 1rem;
+  font-size: 400%;
+  cursor: pointer;
+}
+
+#landingUser span {
   color: var(--accent);
 }
 

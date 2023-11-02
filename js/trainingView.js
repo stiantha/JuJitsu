@@ -1,4 +1,5 @@
 function trainingView() {
+  updateNavBar('trainingView');
   let trainingCategoryHtml = model.categories;
   let subtypes = model.subtypes;
   let exercises = model.exercises;
@@ -11,21 +12,18 @@ function trainingView() {
   
     <div class="box active">
       <div class="img-box">
-      <img src="images/profile2.png" alt="">
-      <h5 class="name" style="color: var(--yellow)">smthing</h5>
+      <img src="images/1.png" alt="">
       </div>
     </div>
   
     <div class="box">
       <div class="img-box">
-        <img src="images/profile2.png" alt="">
-        <h5 class="name" style="color: var(--orange)"">smthing</h5>
+        <img src="images/2.png" alt="">
       </div>
     </div>
   
     <div class="box">
-      <div class="img-box"><img src="images/profile2.png" alt="">
-      <h5 class="name" style="color: var(--green)">smthing</h5>
+      <div class="img-box"><img src="images/3.png" alt="">
     </div>
   </div>
   
@@ -58,7 +56,7 @@ function trainingView() {
 
 function tempTrainingImg() {
   if (model.selectedSubtype === null) {
-    return '<div class="card"><img src="images/banner.png" alt="404" style="min-width: 42.5rem; min-height: 33rem;"></div>';
+    return '<div class="card"><img src="images/martinBilde.png" alt="404" style="min-width: 42.5rem; min-height: 33rem;"></div>';
   } else {
     return "";
   }

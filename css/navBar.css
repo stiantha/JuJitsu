@@ -40,8 +40,8 @@ header {
   display: flex;
   cursor: pointer;
   margin-right: auto;
-  height: 7rem;
-  width: 7rem;
+  height: 6rem;
+  width: 6rem;
 }
 
 .logo p {
@@ -76,6 +76,10 @@ header {
   color: var(--accent);
 }
 
+.nav__links li a.current {
+  color: var(--accent);
+}
+
 button {
   padding: 9px 25px;
   font-size: 1.4rem;
@@ -91,4 +95,8 @@ button {
 button:hover {
   color: rgb(255, 255, 255);
   box-shadow: rgb(255, 255, 255) 0 0 10px;
+}
+
+.regLog {
+  color: var(--accent);
 }
