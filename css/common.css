@@ -83,6 +83,7 @@
     flex-wrap: wrap;
     margin-right: -15px;
     margin-left: -15px;
+    border-radius: 0.5rem;
   }
   
   .no-gutters {

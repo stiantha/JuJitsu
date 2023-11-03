@@ -1,8 +1,8 @@
 function init() {
+  loadModelFromLocalStorage();
   navBar();
   landingView();
   hideTitle();
-  loadModelFromLocalStorage()
 
 }
 
@@ -33,26 +33,27 @@ function hideTitle(){
     }
   }
   
-  function navBar(){
+  function navBar() {
     document.getElementById('header').innerHTML += /*HTML*/`
-    <header>
-    <div class="logo" onclick="landingView()">
-    <img src="images/logo.png" alt="logo">
-    <p id="siteTitle"><span>Ju</span>Jit<span>su</span>%</p></div>
-    <nav>
-        <ul class="nav__links">
+      <header>
+        <div class="logo" onclick="landingView()">
+          <img src="images/logo.png" alt="logo">
+          <p id="siteTitle"><span>Ju</span>Jit<span>su</span>%</p>
+        </div>
+        <nav>
+          <ul class="nav__links">
             <li>
-            <a onclick="ExerciseCollectionView()">Øvelsesamling</a>
-            <a onclick="landingView(landingView)">Startside</a>
-            <a onclick="checkUserLoggedIn(pensumView)">Pensum</a>
-            <a onclick="checkUserLoggedIn(trainingView)">Trening</a>
-            <a onclick="checkUserLoggedIn(userGradeView)">Min Side</a>
+              <a onclick="ExerciseCollectionView()">Ole</a>
+              <a onclick="landingView(landingView)">Startside</a>
+              <a onclick="checkUserLoggedIn(pensumView)">Pensum</a>
+              <a onclick="checkUserLoggedIn(trainingView)">Trening</a>
+              <a onclick="checkUserLoggedIn(userGradeView)">${model.user.name}</a>
             </li>
-        </ul>
-    </nav>
-</header>
-`;
-}
+          </ul>
+        </nav>
+      </header>
+    `;
+  }
 
 function updateNavBar(currentView) {
   const links = document.querySelectorAll('.nav__links a');
@@ -87,3 +88,4 @@ function loadModelFromLocalStorage() {
     model = JSON.parse(storedModel);
   }
 }
+

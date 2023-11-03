@@ -46,6 +46,7 @@ function registerView() {
 }
 
 function loginView() {
+  updateNavBar('userGradeView');
   document.getElementById("app").innerHTML = /*HTML*/ `
     <div class="form" id="loginForm">
       <ul class="tab-group">
@@ -71,7 +72,7 @@ function loginView() {
     `;
 
     document.getElementById("loginForm").addEventListener("submit", function (event) {
-      event.preventDefault(); // Prevent the default form submission behavior
+      event.preventDefault();
       const email = document.getElementById("email").value;
       const password = document.getElementById("password").value;
       const user = model.users.find(user => user.email === email && user.password === password);
@@ -79,7 +80,10 @@ function loginView() {
       if (user) {
         model.user.id = user.id;
         model.user.loggedIn = true;
-        landingView();
+        model.user.name = user.name;
+        navBar();
+        userGradeView();
+        saveModelToLocalStorage();
         console.log('Logged in successfully.');
       } else if (!user) {
         loginView();
@@ -108,7 +112,7 @@ function autofillForms() {
 }
 
 document.addEventListener('keydown', function(event) {
-  if (event.key === '|') { // Replace '|' with the key you want to use
+  if (event.key === '|') {
     autofillForms();
     console.log('Autofill initiated.');
   }

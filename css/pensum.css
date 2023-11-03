@@ -1,15 +1,18 @@
 .display_section{
-  margin-top: -6rem;
+  margin-top: -5.8rem;
+  
 }
 
 .pensum_section {
   transform: translateY(-50%);
+  
 }
 
 
 
 .pensum_section .pensum_container {
   display: -webkit-box;
+  border-radius: 0.5rem;
 
 }
 
@@ -23,6 +26,7 @@
   justify-content: center;
   align-items: center;
   text-align: center;
+  
 }
 
 .pensum_section .pensum_container {

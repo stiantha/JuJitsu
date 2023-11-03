@@ -1,4 +1,5 @@
 function checkUserLoggedIn(callback) {
+  model.selectedSubtype = null;
   const loggedIn = model.user.loggedIn;
   if (loggedIn === true) {
     callback();
@@ -12,7 +13,6 @@ window.onload = function() {
 };
 
 function addUser(firstName, lastName, email, password) {
-  // Check if a user with the provided email already exists
   const emailExists = model.users.some(user => user.email === email);
   if (emailExists) {
     console.log('A user with this email already exists.');
@@ -30,7 +30,9 @@ function addUser(firstName, lastName, email, password) {
 
   model.users.push(newUser);
   model.user.id = newUser.id;
+  model.user.name = newUser.firstName;
   model.user.loggedIn = true;
+  navBar();
   landingView();
   saveModelToLocalStorage();
 }

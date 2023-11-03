@@ -1,14 +1,15 @@
 let model = {
   //? INPUTS
   user: {
-    id: 1,
-    loggedIn: true,
+    id: 0,
+    name: 'Logg inn',
+    loggedIn: false,
   },
 
   users:[
     {
       id: 1,
-      name: "marie",
+      name: "Marie",
       email: "marie@getacademy.no",
       password: "terje123",
       beltGrade: 0,
@@ -46,7 +47,6 @@ let model = {
     { id: 6, name: 'Mitt Program' },
   ],
   selectedSubtype: null,
-  selectedTraining: null,
   subtypes: [
     { id: 0, categoryId: 1, beltId: 1, name: "Guard / Benstillinger", nameJapanese: "Kamae / Ashi-Tachi",   },
     { id: 1, categoryId: 1, beltId: 1, name: "Forflytninger", nameJapanese: "Tai-sabaki",    },

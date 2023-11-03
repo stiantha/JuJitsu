@@ -10,7 +10,7 @@ function userGradeView() {
             <div class="profile">
                 <img src="./images/profile2.png" alt="" width="100" height="100">
                 <div class="name">
-                    Marie
+                    ${model.user.name}
                 </div>
                 <div class="job">
                     Administrator
@@ -70,7 +70,6 @@ function userGradeView() {
     let html = `<h3> ${isCategoryDone(categoryId)}</h3>`;
     for (subtype of model.subtypes)
       if (subtype.categoryId === categoryId) {
-        // for (let i = start; i < end; i++) {
         html += /*HTML*/`
                     <span style="font-size:200%; user-select: none">
                             ${isDoneSubtype(subtype.id) ? '☑' : '☐'}
@@ -119,7 +118,6 @@ function userGradeView() {
       if (exercise.isDone) {
         exerciseDoneCount++;
       }
-      // console.log(exerciseTotalCount,exerciseDoneCount,exercise)
     }
     html = exerciseDoneCount + '/' + exerciseTotalCount;
     if (exerciseDoneCount === exerciseTotalCount) {
