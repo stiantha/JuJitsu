@@ -1,5 +1,4 @@
 html{
-  scroll-behavior: smooth;
   scroll-padding: 0px 0px 0px 0px;
 }
 
@@ -135,7 +134,6 @@ ul{
   flex-direction: row;
   height: 500%;
   width: auto;
-  scroll-behavior: smooth;
 }
 
 

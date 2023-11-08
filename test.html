@@ -1,34 +1,81 @@
 <!DOCTYPE html>
-<meta charset="utf-8">
-<title>Test Suite</title>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Test Suite</title>
 <link rel="stylesheet" href="https://code.jquery.com/qunit/qunit-2.20.0.css">
-
+<script src="https://code.jquery.com/qunit/qunit-2.14.1.js"></script>
+<script src="js/authView.js"></script>
+<script src="js/authController.js"></script>
+<!-- Common ----------------------------------------->
+<script src="js/model.js"></script>
+<script src="js/common.js"></script>
+<!-- Pages ------------------------------------------>
+<script src="js/landingView.js"></script>
+<!--------------------------------------------------->
+<script src="js/pensumView.js"></script>
+<!--------------------------------------------------->
+<script src="js/userGradeController.js"></script>
+<script src="js/userGradeView.js"></script>
+<script src="js/userSettingsView.js"></script>
+<!--------------------------------------------------->
+<script src="js/trainingView.js"></script>
+<!--------------------------------------------------->
+<script src="js/ExerciseCollectionView.js"></script>
+<script src="js/ExerciseCollectionController.js"></script>
+</head>
 <body>
     <div id="qunit"></div>
-    <div id="qunit-fixture"></div>
-    <script src="https://code.jquery.com/qunit/qunit-2.20.0.js"></script>
-    <script src="js/pensumController.js"></script>
-    <script src="js/model.js"></script>
-    <script src="js/pensumView.js"></script>
-</body>
+    <div id="qunit-fixture">
+    <div id="header"></div>
+    <div id="app"></div> 
+    <div id="footer"></div> 
+  </div>
+  </body>
 <script>
-    QUnit.test("selectSubtype updates the model and triggers pensumView", function (assert) {
-  // Arrange
-  const id = "some-subtype-id";
-  const expectedSelectedSubtype = id;
+  
 
-  // Stub the pensumView function to track if it's called
-  let pensumViewCalled = false;
-  window.pensumView = function () {
-    pensumViewCalled = true;
-  };
-
-  // Act
-  selectSubtype(id);
-
-  // Assert
-  assert.strictEqual(model.selectedSubtype, expectedSelectedSubtype, "selectedSubtype is updated");
-  assert.ok(pensumViewCalled, "pensumView is called");
+QUnit.module('authController', function() {
+  QUnit.test('addUser Failure with missing fields', function(assert) {
+  const initialUsersLength = model.users.length;
+  addUser('', '', '', '');
+  assert.equal(model.users.length, initialUsersLength, 'No user should be added to the model.users array unless all fields are filled in');
 });
 
+  QUnit.test('addUser Success with filled out fields', function(assert) {
+    const initialUsersLength = model.users.length;
+    addUser('Get', 'Academy', 'fagskolen@getacademy.no', 'terje123');
+    assert.equal(model.users.length, initialUsersLength + 1, 'One user should be added to the model.users array');
+    assert.equal(model.user.name, 'Get', 'The name of the logged in user should be Get');
+    assert.equal(model.user.loggedIn, true, 'The user should be logged in');
+  });
+
+  QUnit.test('addUser Failure with existing email', function(assert) {
+    const initialUsersLength = model.users.length;
+    addUser('Get', 'Academy', 'fagskolen@getacademy.no', 'terje123');
+    assert.equal(model.users.length, initialUsersLength, 'No user should be added to the model.users array');
+  });
+
+    QUnit.test('auth Success navigate to page', function(assert) {
+    model.user = { loggedIn: true };
+    const mockFunction = function() {
+      assert.ok(true, 'checkUserLoggedIn should call the callback when a user is logged in');
+    };
+    checkUserLoggedIn(mockFunction);
+    model.user = { loggedIn: false };
+  });
+
+  QUnit.test('auth Failure with no user logged in, navigate to authView', function(assert) {
+    model.user = { loggedIn: false };
+    const originalLoginView = loginView;
+    loginView = function() {
+      assert.ok(true, 'loginView should be called when no user is logged in');
+      loginView = originalLoginView;
+    };
+    checkUserLoggedIn(function() {
+      assert.ok(false, 'Callback should not be called when no user is logged in');
+    });
+}); 
+});
 </script>

@@ -10,7 +10,7 @@ function ExerciseCollectionView() {
             <tr>
                 <th>Navn${getSortButtonsHtml('name')}</th>
                 <th>id${getSortButtonsHtml('id')}</th>
-                <th>subtypeid${getSortButtonsHtml('subtypesId')}</th>
+                <th>subtypeid${getSortButtonsHtml('subtypeId')}</th>
                 <th>Med partner ${getSortButtonsHtml('withPartner')}</th>
                 <th>Med strikk ${getSortButtonsHtml('withRubberband')}</th>
                 <th>Video</th>
@@ -60,7 +60,7 @@ function createCollectionHtml(exercises) {
                 <tr>
                     <td>${exercise.name}</td>
                     <td>id=${exercise.id}</td>
-                    <td>id=${exercise.subtypesId}</td>
+                    <td>id=${exercise.subtypeId}</td>
                     <td>${exercise.withPartner}</td>
                     <td>${exercise.withRubberband}</td>
                     <!--<td><iframe width="150" height="50" src="${exercise.medialink}" frameborder="0" allowfullscreen="true"></iframe></td><!---->

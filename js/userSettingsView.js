@@ -22,7 +22,7 @@ function userSettingsView(){
      <div class="url">
          <a href="#settings" class="active">Innstillinger</a>
          <hr align="center">
-     </div>
+     </div>  
  </div>
 </div>
 <!-- End -->

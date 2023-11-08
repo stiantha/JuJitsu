@@ -1,5 +1,6 @@
-hideTitle()
+
 function landingView() {
+hideTitle()
 updateNavBar('landingView');
   document.getElementById("app").innerHTML = /*HTML*/ `
   <section class="landing_section ">

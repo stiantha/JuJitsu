@@ -83,7 +83,7 @@
   }
 
 #pensumTitle span {
-    color: var(--yellow);
+    color: var(--accent);
   }
   
   #pensumText {
@@ -93,7 +93,7 @@
   }
 
   #pensumText span {
-    color: var(--yellow);
+    color: var(--accent);
     text-transform: uppercase;
 
   }
@@ -141,7 +141,6 @@
   width: 45rem;
   color: white;
   cursor: pointer;
-  scroll-behavior: smooth;
   height: 100%;
   transition: height 0.2s ease-out;
 }

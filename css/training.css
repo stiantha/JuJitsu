@@ -15,14 +15,13 @@
     width: 45rem;
     color: white;
     cursor: pointer;
-    scroll-behavior: smooth;
     height: 100%;
     transition: height 0.2s ease-out;
   }
   
   .trainingSelect {
     position: sticky;
-    top: 28rem;
+    top: 20rem;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -42,7 +41,6 @@
     flex-direction: row;
     height: 300%;
     width: auto;
-    scroll-behavior: smooth;
     margin-top: 10%;
 
   }

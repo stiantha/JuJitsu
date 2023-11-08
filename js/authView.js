@@ -84,10 +84,11 @@ function loginView() {
         navBar();
         userGradeView();
         saveModelToLocalStorage();
-        console.log('Logged in successfully.');
+        window.location.reload();
+        console.log('Logget inn vellykket!');
       } else if (!user) {
         loginView();
-        console.log('Incorrect email or password');
+        console.log('Feil mail eller passord');
       }
     });
   }
@@ -114,6 +115,5 @@ function autofillForms() {
 document.addEventListener('keydown', function(event) {
   if (event.key === '|') {
     autofillForms();
-    console.log('Autofill initiated.');
   }
 });

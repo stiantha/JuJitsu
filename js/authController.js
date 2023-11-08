@@ -14,6 +14,10 @@ window.onload = function() {
 
 function addUser(firstName, lastName, email, password) {
   const emailExists = model.users.some(user => user.email === email);
+  if (!firstName || !lastName || !email || !password) {
+    console.log('All fields must be filled in.');
+    return;
+  }
   if (emailExists) {
     console.log('A user with this email already exists.');
     return;

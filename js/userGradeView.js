@@ -22,10 +22,10 @@ function userGradeView() {
                     <a href="#profile" class="active">Gradering</a>
                     <hr align="center">
                 </div>
-                <div class="url">
-                    <a onclick="userSettingsView()">Innstillinger</a>
-                    <hr align="center">
-                </div>
+        <div class="url">
+        <a onclick="userLogOut()">Logg Ut</a>
+        <hr align="center">
+    </div>
             </div>
         </div>
 
@@ -101,7 +101,7 @@ function userGradeView() {
 
   function isDoneSubtype(subtypeId) {
     for (let exercise of model.exercises) {
-      if (exercise.subtypesId == subtypeId && !exercise.isDone) {
+      if (exercise.subtypeId == subtypeId && !exercise.isDone) {
         return false;
       }
     }
@@ -113,7 +113,7 @@ function userGradeView() {
     let exerciseDoneCount = 0;
     let exerciseTotalCount = 0;
     for (let exercise of model.exercises) {
-      if (exercise.subtypesId != subtypeId) continue
+      if (exercise.subtypeId != subtypeId) continue
       exerciseTotalCount++;
       if (exercise.isDone) {
         exerciseDoneCount++;
@@ -130,7 +130,7 @@ function userGradeView() {
     let exerciseDoneCount = 0;
     let exerciseTotalCount = 0;
     for (let exercise of model.exercises) {
-      if (exercise.subtypesId != subtypeId) continue
+      if (exercise.subtypeId != subtypeId) continue
       exerciseTotalCount++;
       if (exercise.isDone) {
         exerciseDoneCount++;
@@ -154,9 +154,9 @@ function createProgressPercent() {
   let totalExercises = 0;
   const categoryNr = 13; // Kategoriene som telles i pensum
   for (let exercise of model.exercises) {
-    if (exercise.subtypesId < categoryNr)
+    if (exercise.subtypeId < categoryNr)
       totalExercises++;
-    if (exercise.isDone && exercise.subtypesId < categoryNr) {
+    if (exercise.isDone && exercise.subtypeId < categoryNr) {
       exerciseDone++;
     }
     progress = (exerciseDone / totalExercises) * 100
@@ -166,6 +166,15 @@ function createProgressPercent() {
   } else {
     return "⠀"; // or whatever you want to return when progress is less than 1
   }
+}
+
+function userLogOut() {
+  localStorage.removeItem('model');
+  localStorage.removeItem('themeColor')
+  model.user.id = 0;
+  model.user.loggedIn = false;
+  model.user.name = 'Logg inn';
+  window.location.reload();
 }
 
 
