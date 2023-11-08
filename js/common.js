@@ -1,7 +1,7 @@
 
 function init() {
   navBar();
-  trainingView();
+  landingView();
   hideTitle();
   loadCurrentTheme();
 
@@ -25,7 +25,7 @@ function hideTitle(){
   
   
   function navBar() {
-    // loadModelFromLocalStorage();
+    loadModelFromLocalStorage();
     document.getElementById('header').innerHTML += /*HTML*/`
       <header>
         <div class="logo" onclick="landingView()">
