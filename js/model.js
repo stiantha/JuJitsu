@@ -43,7 +43,7 @@ let model = {
     { id: 2, name: 'Teknikktrening' },
     { id: 3, name: 'Selvforsvarstrening' },
     { id: 4, name: 'Trening Øvelser' },
-    { id: 5, name: 'Mittd Program' },
+    { id: 5, name: 'Mitt Program' },
   ],
   selectedSubtype: null,
   subtypes: [
@@ -634,7 +634,7 @@ let model = {
       subtypeId: 12,
       name: "Sirkeltrening",
       WithPartner: true,
-      description: ": Forsvar mot uavtalte kontaktgrep fra gult pensum.",
+      description: "",
       medialink: "https://www.youtube.com/embed/ItWZnTdwemg",
     },
 

@@ -115,3 +115,31 @@
     }
 
 }
+
+
+
+@media screen and (min-width: 1900px) {
+    .main_card .second_card {
+        width: 90%;
+    }
+  }
+  
+  @media screen and (min-width: 2440px) {
+    .main_card .second_card {
+        width: 77%;
+      /* Add your styles for 2440px screens here */
+    }
+
+    #checklist {
+        font-size: 1.5rem;
+    }
+
+    .pensumSelect {
+        top: 15;
+    }
+    
+    .main_section{
+        margin-top: 16rem;
+        
+      }
+  }

@@ -30,8 +30,8 @@ function userGradeView() {
         </div>
 
         <!-- Main -->
-        <div class="main_settings">
-        <div class="card_settings">
+        <div class="main_card">
+        <div class="second_card">
             <div class="card-body">
                 <div id="progress">
                 <div class="progress">
@@ -92,7 +92,7 @@ function userGradeView() {
         }
       }
     }
-    return `${result.done} / ${result.total}`;
+    return `<span>${result.done} / ${result.total}</span>`;
   }
 
 
@@ -164,7 +164,7 @@ function createProgressPercent() {
   if (progress >= 1) {
     return Math.round(progress) + "%";
   } else {
-    return "⠀"; // or whatever you want to return when progress is less than 1
+    return "⠀"; 
   }
 }
 

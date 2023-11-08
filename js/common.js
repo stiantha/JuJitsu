@@ -42,7 +42,7 @@ function hideTitle(){
             </li>
        
             <select class="theme" onchange="updateAccentColor(this.value), loadCurrentTheme()">
-            <option id="current"value="#ffc107"></option>
+            <option id="current"value="#ffc107">🟡</option>
             <option disabled></option>
             <option value="#ffc107">🟡</option>
             <option value="#fc6623">🟠</option>
@@ -59,18 +59,20 @@ function hideTitle(){
     `;
   }
 
-function updateNavBar(currentView) {
-  const title = document.getElementById('siteTitle');
-  title.style.visibility = 'visible';
-  const links = document.querySelectorAll('.nav__links a');
-  links.forEach(link => {
-    if (link.onclick.toString().includes(currentView)) {
-      link.classList.add('current');
-    } else {
-      link.classList.remove('current');
+  function updateNavBar(currentView) {
+    const title = document.getElementById('siteTitle');
+    if (title) {
+      title.style.visibility = 'visible';
     }
-  });
-}
+    const links = document.querySelectorAll('.nav__links a');
+    links.forEach(link => {
+      if (link.onclick.toString().includes(currentView)) {
+        link.classList.add('current');
+      } else {
+        link.classList.remove('current');
+      }
+    });
+  }
 
 function footer(){
     document.getElementById('footer').innerHTML += /*HTML*/`

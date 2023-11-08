@@ -84,7 +84,6 @@ function loginView() {
         navBar();
         userGradeView();
         saveModelToLocalStorage();
-        window.location.reload();
         console.log('Logget inn vellykket!');
       } else if (!user) {
         loginView();
