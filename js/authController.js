@@ -37,6 +37,7 @@ function addUser(firstName, lastName, email, password) {
   model.user.name = newUser.firstName;
   model.user.loggedIn = true;
   navBar();
-  landingView();
+  userGradeView();
   saveModelToLocalStorage();
+  window.location.reload();
 }
