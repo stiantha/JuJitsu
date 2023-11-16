@@ -2,9 +2,11 @@
 - Pensum View for å se hva en må mestre for neste beltegradering prøve
 - Trenings øvelser en kan legge til i sitt eget program
 - Oversikt over progresjon
+- LocalStorage
 - Registrer
 - Login
 - Theme
+
 
 - | hotkey for demotest registrer/login
 <br>
