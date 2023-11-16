@@ -11,6 +11,6 @@
 
 <br>
 <h1>Bugs</h1>
-- Tema velger blir ikke refreshed om en velger et tema før en logger inn
-- Videone lastes hver gang en huker av en øvelse
+- Tema velger blir ikke refreshed om en velger et tema før en logger inn<br>
+- Videone lastes hver gang en huker av en øvelse<br>
 - Om man huker av en treningsøvelse på "Mitt Program" vil den ikke bli fjernet, den blir duplisert
